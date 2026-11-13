@@ -1,0 +1,18 @@
+# Configurações locais
+.vscode/
+
+# Segredos
+.env
+.env.*
+**/application-local.properties
+
+# Logs
+*.log
+
+# Arquivos gerados
+**/target/
+**/build/
+**/node_modules/
+
+# Sistema
+.DS_Store

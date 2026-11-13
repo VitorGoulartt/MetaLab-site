@@ -1,0 +1,55 @@
+### 1. Cadastro válido (esperado: 201)
+POST http://localhost:8080/api/campanhas/natal/participacoes
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "email": "maria@exemplo.com",
+  "telefone": "(61) 99999-9999",
+  "cpf": "529.982.247-25",
+  "faixaEtaria": "ADULTO",
+  "aceite": true,
+  "captchaToken": "XXXX.DUMMY.TOKEN.XXXX"
+}
+
+### 2. CPF inválido (esperado: 400, com o campo "cpf" no erro)
+POST http://localhost:8080/api/campanhas/natal/participacoes
+Content-Type: application/json
+
+{
+  "nome": "Joao Silva",
+  "email": "joao@exemplo.com",
+  "telefone": "(61) 98888-7777",
+  "cpf": "111.111.111-11",
+  "faixaEtaria": "ADULTO",
+  "aceite": true,
+  "captchaToken": "XXXX.DUMMY.TOKEN.XXXX"
+}
+
+### 3. Menor sem responsável (esperado: 400, campo "responsavelNome")
+POST http://localhost:8080/api/campanhas/natal/participacoes
+Content-Type: application/json
+
+{
+  "nome": "Ana Lima",
+  "email": "ana@exemplo.com",
+  "telefone": "(61) 97777-6666",
+  "cpf": "111.444.777-35",
+  "faixaEtaria": "MENOR",
+  "aceite": true,
+  "captchaToken": "XXXX.DUMMY.TOKEN.XXXX"
+}
+
+### 4. CAPTCHA inválido (esperado: 400, mensagem de robô)
+POST http://localhost:8080/api/campanhas/natal/participacoes
+Content-Type: application/json
+
+{
+  "nome": "Maria Souza",
+  "email": "maria@exemplo.com",
+  "telefone": "(61) 99999-9999",
+  "cpf": "529.982.247-25",
+  "faixaEtaria": "ADULTO",
+  "aceite": true,
+  "captchaToken": "token-falso"
+}
