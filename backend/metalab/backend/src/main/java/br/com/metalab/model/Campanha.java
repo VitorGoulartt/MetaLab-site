@@ -34,6 +34,9 @@ public class Campanha {
     @Column(nullable = false, length = 15)
     private CampanhaStatus status;
 
+    @Column(name = "regulamento_url", length = 500)
+    private String regulamentoUrl;
+
     @Column(name = "versao_regulamento", nullable = false, length = 20)
     private String versaoRegulamento;
 
@@ -56,6 +59,7 @@ public class Campanha {
     public Instant getInicioEm() { return inicioEm; }
     public Instant getFimEm() { return fimEm; }
     public CampanhaStatus getStatus() { return status; }
+    public String getRegulamentoUrl() { return regulamentoUrl; }
     public String getVersaoRegulamento() { return versaoRegulamento; }
     public String getVersaoPrivacidade() { return versaoPrivacidade; }
 }

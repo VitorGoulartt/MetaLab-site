@@ -1,0 +1,23 @@
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #142B4A;
+  background: #FFFFFF;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --cor-principal: #142B4A;
+  --cor-secundaria: #F2C230;
+  --cor-terciaria: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}

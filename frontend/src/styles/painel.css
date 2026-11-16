@@ -1,0 +1,139 @@
+/* Painel: celular primeiro; a partir de 60rem o menu vira uma coluna à esquerda. */
+.painel {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+
+.painel-topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: calc(0.75rem + env(safe-area-inset-top, 0px)) 1.1rem 0.75rem;
+  background: var(--ameixa);
+  border-bottom: 1px solid #4a3a5c;
+}
+.painel-topo .logo {
+  height: 2.4rem;
+  margin-right: auto;
+}
+.painel-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.25;
+  font-size: 0.9rem;
+}
+.painel-nome {
+  font-weight: 700;
+}
+.painel-usuario small {
+  color: var(--suave);
+}
+.botao-sair {
+  min-height: 2.5rem;
+  padding: 0.4rem 1rem;
+  font: 700 0.9rem var(--fonte);
+  color: var(--ouro);
+  background: transparent;
+  border: 2px solid var(--ouro);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.botao-sair:hover {
+  background: rgba(254, 189, 56, 0.12);
+}
+
+.painel-menu {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.6rem 1.1rem;
+  overflow-x: auto;
+  background: var(--noite);
+}
+.painel-menu a {
+  flex: none;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  color: var(--suave);
+  text-decoration: none;
+  border-radius: 999px;
+}
+.painel-menu a:hover {
+  color: var(--texto);
+}
+.painel-menu a.active {
+  color: var(--noite);
+  background: var(--ouro);
+}
+
+.painel-conteudo {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.1rem calc(3rem + env(safe-area-inset-bottom, 0px));
+}
+
+.titulo-painel {
+  margin: 0 0 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.2;
+}
+
+.grade-cartoes {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.cartao-painel {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem;
+  color: var(--texto);
+  text-decoration: none;
+  background: var(--ameixa);
+  border: 2px solid transparent;
+  border-radius: var(--raio);
+}
+.cartao-painel strong {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--ouro);
+}
+.cartao-painel span {
+  color: var(--suave);
+}
+.cartao-painel:hover {
+  border-color: var(--ouro);
+}
+.link-voltar {
+  color: var(--ouro);
+}
+
+@media (min-width: 60rem) {
+  .painel {
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .painel-topo {
+    grid-column: 1 / -1;
+    padding-inline: 1.5rem;
+  }
+  .painel-menu {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.25rem 1rem;
+    overflow: visible;
+    border-right: 1px solid #4a3a5c;
+  }
+  .painel-menu a {
+    border-radius: 10px;
+  }
+  .painel-conteudo {
+    padding: 2rem 2rem 3rem;
+  }
+}

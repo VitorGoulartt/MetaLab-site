@@ -1,0 +1,129 @@
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #10233D, #1B3B60);
+}
+
+.login-card /* fundo card branco*/{
+  width: 100%;
+  max-width: 430px;
+  padding: 42px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(245, 242, 242, 0.25);
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.brand-icon /* m*/ {
+  display: inline-flex;
+  width: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  background: #F2C230;
+  color: #0d1c3c;
+  font-size: 27px;
+  font-weight: 800;
+  border-radius: 14px;
+}
+
+.login-brand h1 /* bem*/{
+  color: #4a2914;
+  font-size: 27px;
+  letter-spacing: 4px;
+  margin: 14px 0 6px;
+}
+
+.login-brand p,
+.login-heading p {
+  color: #718096;
+  font-size: 14px;
+}
+
+.login-heading {
+  margin-bottom: 28px;
+}
+
+.login-heading h2/*bem vindo*/ {
+  color: #233e61;
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: #d2d8e0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #d2d8e0;
+}
+
+.form-group label {
+  color: #263B54;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 14px;
+  background: #F7F9FC;
+  border: 1px solid #DCE3EC;
+  border-radius: 9px;
+  color: #142B4A;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #d2d8e0;
+   box-shadow: 0 0 0 3px rgba(243, 245, 249, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #A0AEC0;
+}
+
+.login-form button {
+  padding: 15px;
+  margin-top: 8px;
+  background: #F2C230; 
+  color: #000000;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-form button:hover {
+  background: #E3B21E;
+  transform: translateY(-1px);
+}
+
+.login-footer {
+  margin-top: 32px;
+  text-align: center;
+  color: #e3e8ef;
+  font-size: 11px;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 24px;
+  }
+}
