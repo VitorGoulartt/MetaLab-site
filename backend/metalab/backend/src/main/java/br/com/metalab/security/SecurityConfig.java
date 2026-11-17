@@ -47,9 +47,14 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/actuator/health", "/actuator/health/**").permitAll()
                         .requestMatchers("/error").permitAll()
-                        .requestMatchers("/api/auth/**").authenticated()
-                        // As regras por perfil de cada tela do painel entram aqui, uma a uma.
-                        .requestMatchers("/api/admin/**").authenticated()
+                       .requestMatchers("/api/auth/**").authenticated()
+
+                            // Apenas ADMIN e OPERADOR podem executar sorteios.
+                        .requestMatchers(HttpMethod.POST, "/api/admin/sorteios")
+    .hasAnyRole("ADMIN", "OPERADOR")
+
+// Demais rotas administrativas continuam exigindo autenticação.
+.requestMatchers("/api/admin/**").authenticated()
                         .anyRequest().denyAll());
         return http.build();
     }

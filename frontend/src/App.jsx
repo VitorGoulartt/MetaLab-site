@@ -9,6 +9,7 @@ import Entrar from './pages/painel/Entrar.jsx';
 import Resumo from './pages/painel/Resumo.jsx';
 import Privacidade from './pages/Privacidade.jsx';
 import RotaProtegida from './routes/RotaProtegida.jsx';
+import SorteioPublico from './pages/sorteio/SorteioPublico.jsx';
 
 // A sessão só é consultada dentro de /painel: quem preenche o cadastro público não passa por aqui.
 function AreaPainel() {
@@ -26,6 +27,7 @@ export default function App() {
       <Route path="/" element={<Inicio />} />
       <Route path="/campanha/:slug" element={<Cadastro />} />
       <Route path="/privacidade" element={<Privacidade />} />
+      <Route path="/sorteio/:slug" element={<SorteioPublico />} />
 
       {/* Painel */}
       <Route path="/login" element={<Navigate to="/painel/entrar" replace />} />
