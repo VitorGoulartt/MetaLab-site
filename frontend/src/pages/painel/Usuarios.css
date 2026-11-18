@@ -288,3 +288,18 @@
   color: #202124;
   background: #ffffff;
 }
+
+.usuarios-pagina h1,
+.usuarios-pagina h2 {
+  color: #171717;
+  font-weight: 700;
+}
+
+.usuarios-pagina h1 {
+  font-size: 28px;
+}
+
+.usuarios-pagina table th {
+  color: #555555;
+  font-weight: 700;
+}

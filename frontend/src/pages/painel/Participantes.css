@@ -150,3 +150,18 @@
   color: #202124;
   background: #ffffff;
 }
+
+.participantes-pagina h1,
+.participantes-pagina h2 {
+  color: #171717;
+  font-weight: 700;
+}
+
+.participantes-pagina h1 {
+  font-size: 28px;
+}
+
+.participantes-pagina table th {
+  color: #555555;
+  font-weight: 700;
+}
