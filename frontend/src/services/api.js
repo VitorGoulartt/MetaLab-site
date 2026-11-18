@@ -6,7 +6,9 @@ export class ApiError extends Error {
   }
 }
 
-const BASE = import.meta.env.VITE_API_URL || '';
+const BASE = import.meta.env.DEV
+  ? (import.meta.env.VITE_API_URL || '')
+  : '';
 
 function mensagemPadrao(status) {
   if (status === 401) return 'Sua sessão expirou. Entre de novo.';
