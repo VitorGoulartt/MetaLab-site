@@ -280,18 +280,18 @@
 .usuarios-pagina th,
 .usuarios-pagina td,
 .usuarios-pagina label {
-  color: #b80000;
+  color: #000000;
 }
 
 .usuarios-pagina input,
 .usuarios-pagina select {
-  color: #202124;
+  color: #003ffe;
   background: #ffffff;
 }
 
 .usuarios-pagina h1,
 .usuarios-pagina h2 {
-  color: #050505;
+  color: #ff0000;
   font-weight: 700;
 }
 
