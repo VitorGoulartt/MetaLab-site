@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class CampanhaService {
 
-    private final CampanhaRepository campanhas;
+    private  CampanhaRepository campanhas;
     private final Clock clock;
 
     public CampanhaService(CampanhaRepository campanhas, Clock clock) {
