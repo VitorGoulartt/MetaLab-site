@@ -37,3 +37,6 @@ build/
 application-local.properties
 erro.log
 *.log
+
+cookies.txt
+application-local.properties

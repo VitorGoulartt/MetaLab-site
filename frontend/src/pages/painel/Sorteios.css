@@ -1,0 +1,263 @@
+
+/* ================================
+   PÁGINA DE SORTEIOS
+================================ */
+
+.pagina-sorteios {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--texto);
+}
+
+.pagina-sorteios .intro {
+  margin: 0 0 2rem;
+  color: var(--suave);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Formulário */
+
+.sorteio-formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.25rem;
+  padding: 1.75rem;
+  background: var(--ameixa);
+  border: 1px solid #574363;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.sorteio-formulario label {
+  display: block;
+  align-self: end;
+  margin-bottom: 0.1rem;
+  color: var(--texto);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.sorteio-formulario select,
+.sorteio-formulario input {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0.75rem 0.9rem;
+  color: var(--texto);
+  font: 500 0.95rem var(--fonte);
+  background: #21182b;
+  border: 1px solid #665174;
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sorteio-formulario select:focus,
+.sorteio-formulario input:focus {
+  border-color: var(--ouro);
+  box-shadow: 0 0 0 3px rgba(254, 189, 56, 0.13);
+}
+
+.sorteio-formulario input::placeholder {
+  color: #9a8da3;
+}
+
+.sorteio-formulario select:disabled,
+.sorteio-formulario input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sorteio-campanha-info {
+  grid-column: 1 / -1;
+  margin: 0.25rem 0 0.75rem;
+  padding: 0.85rem 1rem;
+  color: var(--suave);
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--ouro);
+  border-radius: 5px;
+}
+
+/* Contagem */
+
+.sorteio-contagem {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  color: var(--ouro);
+  font-weight: 700;
+  text-align: center;
+  background: rgba(254, 189, 56, 0.08);
+  border: 1px solid rgba(254, 189, 56, 0.2);
+  border-radius: 9px;
+}
+
+/* Botão */
+
+.sorteio-iniciar {
+  grid-column: 1 / -1;
+  min-height: 52px;
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.25rem;
+  color: var(--noite);
+  font: 800 1rem var(--fonte);
+  background: var(--ouro);
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s, opacity 0.2s;
+}
+
+.sorteio-iniciar:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.sorteio-iniciar:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Erros */
+
+.sorteio-erro {
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #ffd5d5;
+  background: rgba(190, 45, 65, 0.15);
+  border: 1px solid rgba(255, 100, 120, 0.35);
+  border-radius: 9px;
+}
+
+/* ================================
+   APRESENTAÇÃO EM TELA CHEIA
+================================ */
+
+.sorteio-apresentacao {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1.5rem 3rem;
+  overflow-y: auto;
+  color: var(--texto);
+  background:
+    radial-gradient(ellipse at center, #352343 0%, #17111f 65%, #100d16 100%);
+}
+
+.sorteio-apresentacao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--ouro);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.sorteio-apresentacao-topo button,
+.sorteio-voltar {
+  padding: 0.8rem 1.2rem;
+  color: var(--texto);
+  background: transparent;
+  border: 1px solid #806b91;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sorteio-apresentacao-topo button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sorteio-apresentacao-conteudo {
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+  text-align: center;
+}
+
+.sorteio-apresentacao .sorteio-etiqueta {
+  color: var(--ouro);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.sorteio-apresentacao h2 {
+  margin: 1rem 0;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+}
+
+.sorteio-apresentacao-premio {
+  margin-bottom: 2rem;
+  color: var(--suave);
+  font-size: 1.2rem;
+}
+
+.sorteio-apresentacao .sorteio-visor {
+  height: min(55vh, 520px);
+  min-height: 300px;
+  overflow: hidden;
+  background: rgba(16, 13, 22, 0.8);
+  border: 2px solid var(--ouro);
+  border-radius: 16px;
+  box-shadow: 0 0 50px rgba(211, 171, 93, 0.12);
+}
+
+.sorteio-apresentacao .sorteio-nome-animado {
+  min-height: 5rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.sorteio-apresentacao .sorteio-ganhador {
+  padding: 1.5rem;
+}
+
+.sorteio-apresentacao .sorteio-ganhador strong {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.sorteio-voltar {
+  align-self: center;
+  margin: 1rem 0;
+  color: var(--noite);
+  background: var(--ouro);
+  border-color: var(--ouro);
+  font-weight: 800;
+}
+
+/* Celular */
+
+@media (max-width: 650px) {
+  .sorteio-formulario {
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+  }
+
+  .sorteio-formulario label {
+    margin-top: 0.5rem;
+  }
+
+  .sorteio-contagem,
+  .sorteio-iniciar,
+  .sorteio-campanha-info {
+    grid-column: 1;
+  }
+
+  .sorteio-apresentacao {
+    padding: 1rem;
+  }
+
+  .sorteio-apresentacao-topo {
+    font-size: 0.7rem;
+  }
+}
+

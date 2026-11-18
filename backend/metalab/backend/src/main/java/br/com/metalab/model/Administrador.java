@@ -63,4 +63,20 @@ public class Administrador {
     public boolean isAtivo() { return ativo; }
     public Instant getCriadoEm() { return criadoEm; }
     public Instant getUltimoLoginEm() { return ultimoLoginEm; }
+
+
+    public void atualizarDados(String nome, String email, Perfil perfil) {
+        this.nome = nome;
+        this.email = email;
+        this.perfil = perfil;
+    }
+
+    public void alterarStatus(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public void alterarSenha(String senhaHash) {
+        this.senhaHash = senhaHash;
+    }
+
 }

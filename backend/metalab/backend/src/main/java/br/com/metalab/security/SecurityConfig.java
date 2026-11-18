@@ -52,8 +52,20 @@ public class SecurityConfig {
                             // Apenas ADMIN e OPERADOR podem executar sorteios.
                         .requestMatchers(HttpMethod.POST, "/api/admin/sorteios")
     .hasAnyRole("ADMIN", "OPERADOR")
+    .requestMatchers(HttpMethod.GET, "/api/admin/campanhas")
+   .hasAnyRole("ADMIN", "OPERADOR")
 
+
+   .requestMatchers(
+    HttpMethod.GET,
+    "/api/admin/campanhas/*/participantes-elegiveis"
+).hasAnyRole("ADMIN", "OPERADOR")
+.requestMatchers(HttpMethod.POST, "/api/admin/campanhas")
+.hasRole("ADMIN")
+.requestMatchers(HttpMethod.PUT, "/api/admin/campanhas/*")
+.hasRole("ADMIN")
 // Demais rotas administrativas continuam exigindo autenticação.
+.requestMatchers("/api/admin/usuarios/**").hasRole("ADMIN")
 .requestMatchers("/api/admin/**").authenticated()
                         .anyRequest().denyAll());
         return http.build();

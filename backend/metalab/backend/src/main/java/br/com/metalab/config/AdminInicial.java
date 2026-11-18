@@ -44,7 +44,7 @@ public class AdminInicial implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        if (administradores.existsByPerfil(Perfil.ADMIN)) {
+        if (administradores.countByPerfilAndAtivoTrue(Perfil.ADMIN) > 0)  {
             return;
         }
         if (email.isBlank() || senha.isBlank()) {

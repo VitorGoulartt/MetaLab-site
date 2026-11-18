@@ -15,5 +15,6 @@ public interface CampanhaRepository extends JpaRepository<Campanha, Long> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT c FROM Campanha c WHERE c.id = :id")
     Optional<Campanha> buscarPorIdComBloqueio(@Param("id") Long id);
-    
+    boolean existsBySlugAndIdNot(String slug, Long id);
+
 }

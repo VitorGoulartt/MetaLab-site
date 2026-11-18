@@ -1,0 +1,151 @@
+
+.pagina-campanhas {
+  width: 100%;
+}
+
+.campanha-formulario {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 45rem;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--ameixa);
+  border: 1px solid #4a3a5c;
+  border-radius: var(--raio);
+}
+
+.campanha-formulario h2,
+.campanha-lista h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+}
+
+.campanha-formulario label {
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+
+.campanha-formulario input,
+.campanha-formulario select {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: 0.7rem;
+  color: var(--texto);
+  background: var(--noite);
+  border: 1px solid #665575;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.campanha-formulario small {
+  color: var(--suave);
+}
+
+.campanha-campos-duplos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.campanha-campos-duplos > div {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.campanha-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.campanha-acoes button,
+.campanha-item button {
+  min-height: 2.8rem;
+  padding: 0.7rem 1.2rem;
+  color: var(--noite);
+  background: var(--ouro);
+  border: 0;
+  border-radius: 8px;
+  font: 700 0.95rem var(--fonte);
+  cursor: pointer;
+}
+
+.campanha-acoes button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.campanha-acoes .campanha-cancelar {
+  color: var(--texto);
+  background: #665575;
+}
+
+.campanha-mensagem {
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+
+.campanha-mensagem.erro {
+  color: #ffb8b8;
+  background: #501f2b;
+}
+
+.campanha-mensagem.sucesso {
+  color: #b8f5c6;
+  background: #183c2b;
+}
+
+.campanha-lista {
+  max-width: 55rem;
+  margin-top: 2.5rem;
+}
+
+.campanha-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  padding: 1rem;
+  background: var(--ameixa);
+  border: 1px solid #4a3a5c;
+  border-radius: var(--raio);
+}
+
+.campanha-item h3 {
+  margin: 0;
+}
+
+.campanha-item p {
+  margin: 0.3rem 0;
+  color: var(--suave);
+}
+
+.campanha-status {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.campanha-status.ativa {
+  color: #8de5a7;
+}
+
+.campanha-status.rascunho {
+  color: var(--ouro);
+}
+
+.campanha-status.encerrada {
+  color: #ffaaaa;
+}
+
+@media (max-width: 600px) {
+  .campanha-campos-duplos {
+    grid-template-columns: 1fr;
+  }
+
+  .campanha-item {
+    align-items: flex-start;
+  }
+}

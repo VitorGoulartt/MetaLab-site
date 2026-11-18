@@ -27,7 +27,7 @@ export const MENU = [
   {
     caminho: '/painel/sorteios',
     rotulo: 'Sorteios',
-    descricao: 'Girar a roleta e ver os ganhadores.',
+    descricao: 'Executar sorteios e visualizar os ganhadores.',
     perfis: ['ADMIN', 'OPERADOR'],
   },
   {

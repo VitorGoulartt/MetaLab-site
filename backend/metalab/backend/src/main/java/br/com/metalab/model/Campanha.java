@@ -1,13 +1,7 @@
+
 package br.com.metalab.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.time.Instant;
 
 @Entity
@@ -18,7 +12,7 @@ public class Campanha {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 80)
+    @Column(nullable = false, length = 80, unique = true)
     private String slug;
 
     @Column(nullable = false, length = 150)
@@ -43,10 +37,28 @@ public class Campanha {
     @Column(name = "versao_privacidade", nullable = false, length = 20)
     private String versaoPrivacidade;
 
-    protected Campanha() {
+    public Campanha() {
     }
 
-    /** Recebe participações só se estiver ATIVA e dentro do período. */
+    public void atualizar(
+            String nome,
+            String slug,
+            Instant inicioEm,
+            Instant fimEm,
+            CampanhaStatus status,
+            String regulamentoUrl,
+            String versaoRegulamento,
+            String versaoPrivacidade) {
+        this.nome = nome;
+        this.slug = slug;
+        this.inicioEm = inicioEm;
+        this.fimEm = fimEm;
+        this.status = status;
+        this.regulamentoUrl = regulamentoUrl;
+        this.versaoRegulamento = versaoRegulamento;
+        this.versaoPrivacidade = versaoPrivacidade;
+    }
+
     public boolean estaAberta(Instant agora) {
         return status == CampanhaStatus.ATIVA
                 && !agora.isBefore(inicioEm)

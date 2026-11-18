@@ -63,3 +63,29 @@ export const entrar = (email, senha) =>
   chamar('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, senha }) });
 export const sair = () => chamar('/api/auth/logout', { method: 'POST' });
 export const eu = () => chamar('/api/auth/me');
+
+// Painel: sorteios
+export const listarCampanhasAdmin = () =>
+  chamar('/api/admin/campanhas');
+
+export const listarParticipantesElegiveis = (campanhaId) =>
+  chamar(`/api/admin/campanhas/${campanhaId}/participantes-elegiveis`);
+
+export const executarSorteio = (dados) =>
+  chamar('/api/admin/sorteios', {
+    method: 'POST',
+    body: JSON.stringify(dados),
+  });
+
+  // Painel: gerenciamento de campanhas
+export const criarCampanha = (dados) =>
+  chamar('/api/admin/campanhas', {
+    method: 'POST',
+    body: JSON.stringify(dados),
+  });
+
+export const editarCampanha = (id, dados) =>
+  chamar(`/api/admin/campanhas/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(dados),
+  });
