@@ -22,7 +22,7 @@ export const MENU = [
     caminho: '/painel/participantes',
     rotulo: 'Participantes',
     descricao: 'Consultar quem já está participando de cada campanha.',
-    perfis: ['ADMIN', 'SUPORTE'],
+    perfis: ['ADMIN', 'OPERADOR', 'SUPORTE'],
   },
   {
     caminho: '/painel/sorteios',

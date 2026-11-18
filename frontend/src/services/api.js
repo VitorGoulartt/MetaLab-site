@@ -89,3 +89,32 @@ export const editarCampanha = (id, dados) =>
     method: 'PUT',
     body: JSON.stringify(dados),
   });
+  export const listarParticipantes = (campanhaId) => {
+  const query = campanhaId
+    ? `?campanhaId=${encodeURIComponent(campanhaId)}`
+    : '';
+
+  return chamar(`/api/admin/participantes${query}`);
+  
+};
+// Usuários
+export const listarUsuarios = () =>
+  chamar('/api/admin/usuarios');
+
+export const criarUsuario = (dados) =>
+  chamar('/api/admin/usuarios', {
+    method: 'POST',
+    body: JSON.stringify(dados),
+  });
+
+export const editarUsuario = (id, dados) =>
+  chamar(`/api/admin/usuarios/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(dados),
+  });
+
+export const alterarStatusUsuario = (id, ativo) =>
+  chamar(`/api/admin/usuarios/${id}/status`, {
+    method: 'PATCH',
+    body: JSON.stringify({ ativo }),
+  });

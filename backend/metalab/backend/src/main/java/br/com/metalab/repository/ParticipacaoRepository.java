@@ -11,6 +11,19 @@ public interface ParticipacaoRepository extends JpaRepository<Participacao, Long
 
     boolean existsByClienteIdAndCampanhaId(Long clienteId, Long campanhaId);
 
+
+    @Query("""
+        SELECT p FROM Participacao p
+        JOIN FETCH p.cliente
+        JOIN FETCH p.campanha
+        WHERE (:campanhaId IS NULL OR p.campanha.id = :campanhaId)
+        ORDER BY p.criadoEm DESC
+    """)
+    List<Participacao> listarTodas(
+        @Param("campanhaId") Long campanhaId
+    );
+
+
     @Query("""
         SELECT p FROM Participacao p
         JOIN FETCH p.cliente

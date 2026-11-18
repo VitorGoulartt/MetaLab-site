@@ -12,6 +12,9 @@ import Privacidade from './pages/Privacidade.jsx';
 import RotaProtegida from './routes/RotaProtegida.jsx';
 import SorteioPublico from './pages/sorteio/SorteioPublico.jsx';
 import Sorteios from './pages/painel/Sorteios.jsx';
+import Participantes from './pages/painel/Participantes.jsx';
+import Usuarios from './pages/painel/Usuarios.jsx';
+
 
 function AreaPainel() {
   return (
@@ -52,11 +55,11 @@ export default function App() {
 
             <Route element={<RotaProtegida perfis={['ADMIN']} />}>
               <Route path="campanhas" element={<Campanhas />} />
-              <Route path="usuarios" element={<EmBreve titulo="Usuários" />} />
+              <Route path="usuarios" element={<Usuarios />} />
             </Route>
 
-            <Route element={<RotaProtegida perfis={['ADMIN', 'SUPORTE']} />}>
-              <Route path="participantes" element={<EmBreve titulo="Participantes" />} />
+            <Route element={<RotaProtegida perfis={['ADMIN', 'OPERADOR', 'SUPORTE']} />}>
+              <Route path="participantes" element={<Participantes />} />
             </Route>
 
             <Route element={<RotaProtegida perfis={['ADMIN', 'OPERADOR']} />}>

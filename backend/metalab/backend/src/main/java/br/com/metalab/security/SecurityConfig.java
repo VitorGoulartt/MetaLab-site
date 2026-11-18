@@ -52,8 +52,8 @@ public class SecurityConfig {
                             // Apenas ADMIN e OPERADOR podem executar sorteios.
                         .requestMatchers(HttpMethod.POST, "/api/admin/sorteios")
     .hasAnyRole("ADMIN", "OPERADOR")
-    .requestMatchers(HttpMethod.GET, "/api/admin/campanhas")
-   .hasAnyRole("ADMIN", "OPERADOR")
+   .requestMatchers(HttpMethod.GET, "/api/admin/participantes")
+    .hasAnyRole("ADMIN", "OPERADOR", "SUPORTE")
 
 
    .requestMatchers(

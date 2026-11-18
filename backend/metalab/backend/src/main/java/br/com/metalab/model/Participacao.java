@@ -13,6 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.Instant;
 
+
 @Entity
 @Table(name = "participacoes")
 public class Participacao {
@@ -67,4 +68,5 @@ public class Participacao {
     public Cliente getCliente() { return cliente; }
     public Campanha getCampanha() { return campanha; }
     public FaixaEtaria getFaixaEtaria() { return faixaEtaria; }
+    public Instant getCriadoEm() { return criadoEm; }
 }
