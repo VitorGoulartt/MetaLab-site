@@ -234,3 +234,41 @@
     flex-direction: column;
   }
 }
+
+
+/* Correção visual do modal de usuários */
+.usuarios-modal {
+  background: #ffffff !important;
+  color: #202124 !important;
+  opacity: 1 !important;
+}
+
+.usuarios-modal h2,
+.usuarios-modal label,
+.usuarios-modal small {
+  color: #202124 !important;
+}
+
+.usuarios-modal input,
+.usuarios-modal select {
+  background: #ffffff !important;
+  color: #202124 !important;
+  border: 1px solid #cccccc !important;
+}
+
+.usuarios-modal input::placeholder {
+  color: #777777 !important;
+}
+
+.usuarios-modal option {
+  background: #ffffff;
+  color: #202124;
+}
+
+.usuarios-modal header button {
+  color: #202124 !important;
+}
+
+.usuarios-modal footer button {
+  opacity: 1;
+}
