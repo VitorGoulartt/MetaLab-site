@@ -134,3 +134,19 @@
     width: 100%;
   }
 }
+
+.participantes-pagina,
+.participantes-pagina h1,
+.participantes-pagina p,
+.participantes-pagina table,
+.participantes-pagina th,
+.participantes-pagina td,
+.participantes-pagina label {
+  color: #202124;
+}
+
+.participantes-pagina input,
+.participantes-pagina select {
+  color: #202124;
+  background: #ffffff;
+}

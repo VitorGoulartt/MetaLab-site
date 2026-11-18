@@ -272,3 +272,19 @@
 .usuarios-modal footer button {
   opacity: 1;
 }
+
+.usuarios-pagina,
+.usuarios-pagina h1,
+.usuarios-pagina p,
+.usuarios-pagina table,
+.usuarios-pagina th,
+.usuarios-pagina td,
+.usuarios-pagina label {
+  color: #202124;
+}
+
+.usuarios-pagina input,
+.usuarios-pagina select {
+  color: #202124;
+  background: #ffffff;
+}
